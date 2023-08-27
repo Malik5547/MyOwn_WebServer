@@ -1,0 +1,34 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>AJAX Demo</title>
+  <script type="text/javascript" src="/Scripts/jquery-3.7.0.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#me").click(function () {
+        $.ajax({
+          url: this.href,
+          datatype: "json",
+          async: true,
+          cache: false,
+          type: "post",
+          data: {
+          number: 5
+          },
+          success: function(data, status)
+          {
+            alert(data);
+          }
+        });
+      });
+    });
+</script>
+
+</head>
+<body>
+  <div class="center-inner top-margin-50">
+    <input class="button" type="button" value="AJAX!" id="me"/>
+  </div>
+</body>
+</html>
